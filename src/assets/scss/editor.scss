@@ -1,0 +1,16 @@
+#postDetail {
+    .download-link {
+        margin-top: 0.5rem;
+
+        .link-type-url {
+            width: 500px;
+            margin-left: 1rem;
+        }
+        .url-btn {
+            display: inline-block;
+            margin-left: 1rem;
+            margin-top: 0.4rem;
+            cursor: pointer;
+        }
+    }
+}
