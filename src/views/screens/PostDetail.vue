@@ -130,6 +130,8 @@ import List from "@ckeditor/ckeditor5-list/src/list";
 import postApi from "../../services/postApi";
 // import { toast } from "bulma-toast";
 
+import regexConst from "@/constants/regexConst";
+
 export default {
   name: "admin detail",
   components: {
@@ -214,19 +216,21 @@ export default {
           const links = result.links;
 
           this.postId = post.id;
-          this.categorySelected = post.category_code;
+          this.categorySelected = post.categoryCode;
           this.postCode = post.code;
           this.title = post.title;
           this.description = post.description;
           this.editorData = post.content;
 
-          this.linkDownloadList = [];
-          links.forEach((link) => {
-            this.linkDownloadList.push({
-              type: link.type_code,
-              url: link.url,
+          if (links.length) {
+            this.linkDownloadList = [];
+            links.forEach((link) => {
+              this.linkDownloadList.push({
+                type: link.type_code,
+                url: link.url,
+              });
             });
-          });
+          }
         })
         .catch((err) => {
           console.error("Load post detail failed ", err);
@@ -293,6 +297,12 @@ export default {
       //   duration: 1000,
       //   position: "bottom-center",
       // });
+
+      const imgUrlList = this.editorData.match(regexConst.FIND_URL);
+      const imgUrl = imgUrlList.find((img) =>
+        img.includes(`https://drive.google.com/uc`)
+      );
+
       let data = {
         id: this.postId,
         code: this.postCode,
@@ -301,6 +311,7 @@ export default {
         description: this.description,
         content: this.editorData,
         linkDownload: this.linkDownloadList,
+        imgUrl: imgUrl,
       };
       postApi
         .savePost(data)
