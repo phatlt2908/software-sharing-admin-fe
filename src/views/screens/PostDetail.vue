@@ -29,6 +29,17 @@
       </div>
     </div>
     <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="Name"
+          v-model="postName"
+        />
+      </div>
+    </div>
+    <div class="field">
       <label class="label">Tiêu đề</label>
       <div class="control">
         <textarea
@@ -183,6 +194,7 @@ export default {
 
       postId: null,
       postCode: "",
+      postName: "",
       categoryList: null,
       categorySelected: null,
       title: "",
@@ -218,6 +230,7 @@ export default {
           this.postId = post.id;
           this.categorySelected = post.categoryCode;
           this.postCode = post.code;
+          this.postName = post.name;
           this.title = post.title;
           this.description = post.description;
           this.editorData = post.content;
@@ -306,6 +319,7 @@ export default {
       let data = {
         id: this.postId,
         code: this.postCode,
+        name: this.postName,
         categoryCode: this.categorySelected,
         title: this.title,
         description: this.description,
