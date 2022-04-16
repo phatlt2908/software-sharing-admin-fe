@@ -96,6 +96,12 @@
             placeholder="url"
             v-model="link.url"
           />
+          <input
+            class="input link-type-url"
+            type="text"
+            placeholder="name"
+            v-model="link.name"
+          />
           <div
             v-if="linkDownloadList.length > 1"
             class="url-btn icon has-text-link"
@@ -170,7 +176,7 @@ export default {
           List,
         ],
         ckfinder: {
-          uploadUrl: "http://localhost:8081/master/post/upload-image",
+          uploadUrl: process.env.VUE_APP_API_UPLOAD_IMAGE_URL,
         },
         toolbar: {
           items: [
@@ -204,6 +210,7 @@ export default {
         {
           type: null,
           url: null,
+          name: null
         },
       ],
     };
@@ -241,6 +248,7 @@ export default {
               this.linkDownloadList.push({
                 type: link.type_code,
                 url: link.url,
+                name: link.name
               });
             });
           }
