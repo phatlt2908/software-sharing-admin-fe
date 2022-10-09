@@ -1,7 +1,7 @@
 <template>
   <body>
     <div>
-      <div class="navigation">
+      <div>
         <top></top>
       </div>
       <div class="side-bar">
@@ -44,12 +44,8 @@ export default {
   top: 0;
 }
 
-.navigation {
-  padding-left: 15rem;
-  transition: padding-left 0.25s ease-in-out 50ms;
-}
-
 .content {
+  margin-top: 56px;
   padding-left: 15rem;
   transition: padding-left 0.25s ease-in-out 50ms;
 }

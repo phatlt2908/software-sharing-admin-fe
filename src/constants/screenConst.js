@@ -15,6 +15,10 @@ const screen = {
         path: "postDetail",
         name: "Bài viết"
     },
+    COMMENT: {
+        path: "comment",
+        name: "Bình luận"
+    },
 
     LOGIN: {
         path: "login",

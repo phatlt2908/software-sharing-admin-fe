@@ -14,6 +14,10 @@ class postApi {
         return axios.post(postApiConst.LINK_DOWNLOAD_TYPE_PULLDOWN)
     }
 
+    getPostList(data) {
+        return axios.post(postApiConst.POST_LIST, data)
+    }
+
     getPostDetail(data) {
         return axios.post(postApiConst.POST_DETAIL, data)
     }

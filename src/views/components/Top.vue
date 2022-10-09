@@ -1,6 +1,6 @@
 <template>
   <div id="top">
-    <nav class="bd-navbar navbar">
+    <nav class="bd-navbar navbar is-fixed-top">
       <div class="navbar-brand">
         <router-link :to="{ name: 'dashboard' }" class="navbar-item">
           <div class="">Đây Nè Admin</div>
@@ -29,14 +29,12 @@
               <a class="navbar-item"> Report an issue </a>
             </div>
           </div>
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light"> Log in </a>
-            </div>
-          </div>
+          <a class="navbar-item">
+            <span class="icon">
+              <font-awesome-icon icon="sign-in-alt" size="sm" />
+            </span>
+            <span>Logout</span>
+          </a>
         </div>
       </div>
     </nav>

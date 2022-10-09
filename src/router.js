@@ -43,7 +43,17 @@ const routes = [
           content: 'Bài viết',
           active: 'detail'
         }
-      }
+      },
+      {
+        path: screenConst.COMMENT.path,
+        component: () => import('@/views/screens/Comment'),
+        name: 'comment',
+        meta: {
+          title: 'Bình luận',
+          content: 'Bình luận',
+          active: 'comment'
+        }
+      },
     ]
   },
   {

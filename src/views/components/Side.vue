@@ -19,7 +19,7 @@
       <p class="menu-label">Administration</p>
       <ul class="menu-list">
         <li>
-          <router-link :to="{ name: 'postDetail' }"> Bài viết </router-link>
+          <router-link :to="{ name: 'postList' }"> Bài viết </router-link>
           <ul>
             <li>
               <router-link
@@ -42,18 +42,22 @@
                 <span class="icon">
                   <font-awesome-icon icon="plus" size="sm" />
                 </span>
-                <span class="menu-item-label">Tạo mới</span>
+                <span class="menu-item-label">Thêm mới / sửa</span>
               </router-link>
             </li>
           </ul>
         </li>
         <li>
-          <a class="router-link-active icon-text">
+          <router-link
+            :to="{ name: 'comment' }"
+            class="router-link-active icon-text"
+            active-class="is-active"
+          >
             <span class="icon">
               <font-awesome-icon icon="comment" size="sm" />
             </span>
             <span class="menu-item-label">Bình luận</span>
-          </a>
+          </router-link>
         </li>
       </ul>
     </aside>
