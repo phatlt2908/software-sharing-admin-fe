@@ -25,12 +25,22 @@ const routes = [
         }
       },
       {
+        path: screenConst.POST_LIST.path,
+        component: () => import('@/views/screens/PostList'),
+        name: 'postList',
+        meta: {
+          title: 'Danh sách bài viết',
+          content: 'Danh sách bài viết',
+          active: 'postList'
+        }
+      },
+      {
         path: screenConst.POST_DETAIL.path,
         component: () => import('@/views/screens/PostDetail'),
         name: 'postDetail',
         meta: {
-          title: 'Chi tiết',
-          content: 'Chi tiết',
+          title: 'Bài viết',
+          content: 'Bài viết',
           active: 'detail'
         }
       }

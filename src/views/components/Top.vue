@@ -2,20 +2,9 @@
   <div id="top">
     <nav class="bd-navbar navbar">
       <div class="navbar-brand">
-        <router-link :to="{ name: 'home' }" class="navbar-item">
-          Đây Nè
+        <router-link :to="{ name: 'dashboard' }" class="navbar-item">
+          <div class="">Đây Nè Admin</div>
         </router-link>
-        <!-- <a>
-          <font-awesome-icon :icon="['fab', 'facebook']" size="lg" />
-        </a>
-        <button
-          id="searchIcon"
-          class="navbar-item bd-navbar-search-icon bd-navbar-mobile-icon"
-        >
-          <span class="icon has-text-primary">
-            <font-awesome-icon icon="search" size="lg" />
-          </span>
-        </button> -->
         <div
           class="navbar-burger"
           :class="{ 'is-active': isActiveMobile }"
@@ -28,107 +17,27 @@
         </div>
       </div>
 
-      <div
-        class="navbar-menu"
-        id="navbarExampleTransparentExample"
-        :class="{ 'is-active': isActiveMobile }"
-      >
-        <div class="navbar-start">
-          <router-link :to="{ name: 'home' }" class="navbar-item">
-            <span class="icon has-text-primary">
-              <font-awesome-icon icon="home" />
-            </span>
-            <span>Trang chủ</span>
-          </router-link>
-          <router-link :to="{ name: 'game' }" class="navbar-item">
-            <span class="icon has-text-danger">
-              <font-awesome-icon icon="gamepad" />
-            </span>
-            <span>Games</span>
-          </router-link>
-          <router-link :to="{ name: 'office' }" class="navbar-item">
-            <span class="icon has-text-info">
-              <font-awesome-icon icon="print" />
-            </span>
-            <span>Văn phòng</span>
-          </router-link>
-          <router-link :to="{ name: 'graphic' }" class="navbar-item">
-            <span class="icon has-text-success">
-              <font-awesome-icon icon="paint-brush" />
-            </span>
-            <span>Đồ họa</span>
-          </router-link>
-          <router-link :to="{ name: 'technique' }" class="navbar-item">
-            <span class="icon has-text-warning">
-              <font-awesome-icon icon="drafting-compass" />
-            </span>
-            <span>Kỹ thuật</span>
-          </router-link>
-          <router-link :to="{ name: 'os' }" class="navbar-item">
-            <span class="icon has-text-link">
-              <font-awesome-icon :icon="['fab', 'windows']" />
-            </span>
-            <span>Hệ điều hành</span>
-          </router-link>
-          <router-link :to="{ name: 'common' }" class="navbar-item">
-            <span class="icon has-text-black">
-              <font-awesome-icon icon="file-archive" />
-            </span>
-            <span>Ai cũng cần</span>
-          </router-link>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
-            <router-link
-              :to="{ name: 'home' }"
-              class="navbar-link is-arrowless"
-            >
-              <span class="has-text-link">
-                <font-awesome-icon icon="ellipsis-h" />
-              </span>
-            </router-link>
-            <div class="navbar-dropdown is-boxed">
-              <router-link :to="{ name: 'home' }" class="navbar-item">
-                Diệt virus
-              </router-link>
+            <a class="navbar-link"> More </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> About </a>
+              <a class="navbar-item"> Jobs </a>
+              <a class="navbar-item"> Contact </a>
               <hr class="navbar-divider" />
-              <router-link :to="{ name: 'home' }" class="navbar-item">
-                APK
-              </router-link>
+              <a class="navbar-item"> Report an issue </a>
+            </div>
+          </div>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light"> Log in </a>
             </div>
           </div>
         </div>
-
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <a>
-              <font-awesome-icon :icon="['fab', 'facebook']" size="lg" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div
-        id="search"
-        class="bd-search"
-        :class="{ 'is-active': isActiveMobile }"
-      >
-        <p class="control has-icons-left">
-          <span
-            style="position: relative; display: inline-block; direction: ltr"
-          >
-            <input
-              id="algoliaSearch"
-              class="input is-rounded is-primary"
-              type="text"
-              placeholder="Tìm kiếm..."
-              autocomplete="off"
-              spellcheck="false"
-              style="position: relative; vertical-align: top"
-            />
-          </span>
-          <span class="icon is-small is-left has-text-primary">
-            <font-awesome-icon icon="search" />
-          </span>
-        </p>
       </div>
     </nav>
   </div>
@@ -162,8 +71,6 @@ export default {
         showConfirmButton: false,
         type: "success",
       });
-
-      this.$router.push({ name: "home" });
     },
   },
 };
@@ -183,4 +90,4 @@ li {
 }
 </style>
 
-<style lang="scss" src="@/assets/scss/top.scss"></style>
+<style lang="scss" src="@/assets/scss/_top.scss"></style>

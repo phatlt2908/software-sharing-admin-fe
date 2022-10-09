@@ -7,9 +7,13 @@ const screen = {
         path: "dashboard",
         name: "dashboard"
     },
+    POST_LIST: {
+        path: "postList",
+        name: "Danh sách bài viết"
+    },
     POST_DETAIL: {
         path: "postDetail",
-        name: "Chi tiết"
+        name: "Bài viết"
     },
 
     LOGIN: {

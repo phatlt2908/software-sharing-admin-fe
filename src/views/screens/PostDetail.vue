@@ -1,11 +1,12 @@
 <template>
   <div id="postDetail">
+    <h1>Nội dung bài viết</h1>
     <div class="field">
       <label class="label">Danh mục</label>
       <div class="control">
         <div class="select">
           <select v-model="categorySelected">
-            <option :value="null">--- category ---</option>
+            <option :value="null">--- Chọn danh mục ---</option>
             <option
               v-for="category in categoryList"
               :key="category.code"
@@ -23,7 +24,7 @@
         <input
           class="input"
           type="text"
-          placeholder="Code"
+          placeholder="Code (vd: 2016 Professional Plus Full)"
           v-model="postCode"
         />
       </div>
@@ -34,7 +35,7 @@
         <input
           class="input"
           type="text"
-          placeholder="Name"
+          placeholder="Name (vd: 2016 Professional Plus Full)"
           v-model="postName"
         />
       </div>
@@ -44,7 +45,7 @@
       <div class="control">
         <textarea
           class="textarea"
-          placeholder="Tiêu đề"
+          placeholder="Tiêu đề (vd: Download Visio 2016 Professional Plus Full - Hướng dẫn (Google Drive))"
           maxlength="500"
           v-model="title"
         ></textarea>
@@ -71,7 +72,7 @@
       </div>
     </div>
     <div class="field">
-      <label class="label">Link download</label>
+      <label class="label">Download link</label>
       <div class="control">
         <div
           class="download-link"
@@ -80,7 +81,7 @@
         >
           <div class="select">
             <select v-model="link.type">
-              <option :value="null">--- link type ---</option>
+              <option :value="null">--- Chọn loại link ---</option>
               <option
                 v-for="type in linkDownloadTypeList"
                 :key="type.code"
@@ -157,7 +158,7 @@ export default {
   data() {
     return {
       editor: ClassicEditor,
-      editorData: "<p>Content of the editor.</p>",
+      editorData: "<p>Nội dung bài viết</p>",
       editorConfig: {
         plugins: [
           CKFinder,
@@ -210,7 +211,7 @@ export default {
         {
           type: null,
           url: null,
-          name: null
+          name: null,
         },
       ],
     };
@@ -248,7 +249,7 @@ export default {
               this.linkDownloadList.push({
                 type: link.type_code,
                 url: link.url,
-                name: link.name
+                name: link.name,
               });
             });
           }
