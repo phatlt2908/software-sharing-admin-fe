@@ -67,7 +67,9 @@
 <script>
 export default {
   name: "Side",
-  data() {},
+  data() {
+    return {};
+  },
 };
 </script>
 

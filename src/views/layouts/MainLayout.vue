@@ -21,7 +21,9 @@ import Side from "../components/Side.vue";
 import Top from "../components/Top.vue";
 export default {
   name: "MainLayout",
-  data() {},
+  data() {
+    return {};
+  },
   computed: {
     breadcrumbs: function () {
       return this.$route.meta.breadcrumb;

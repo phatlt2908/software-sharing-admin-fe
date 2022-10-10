@@ -1,8 +1,4 @@
 const screen = {
-    ADMIN: {
-        path: "admin",
-        name: "admin"
-    },
     DASHBOARD: {
         path: "dashboard",
         name: "dashboard"
@@ -21,11 +17,11 @@ const screen = {
     },
 
     LOGIN: {
-        path: "login",
+        path: "/login",
         name: "Đăng nhập"
     },
     REGISTER: {
-        path: "register",
+        path: "/register",
         name: "Đăng ký"
     },
     CHANGE_PASSWORD: {

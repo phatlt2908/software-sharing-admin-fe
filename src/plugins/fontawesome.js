@@ -7,6 +7,15 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import { faSignature } from "@fortawesome/free-solid-svg-icons";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
 
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
@@ -18,5 +27,14 @@ library.add(
   faList,
   faPlus,
   faComment,
-  faSignInAlt
+  faSignInAlt,
+  faUser,
+  faCheck,
+  faExclamationTriangle,
+  faEnvelope,
+  faChevronRight,
+  faChevronLeft,
+  faPencilAlt,
+  faSignature,
+  faCog
 );

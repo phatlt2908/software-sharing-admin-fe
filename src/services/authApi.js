@@ -25,10 +25,6 @@ class authApi {
     changePassword(data) {
         return axios.post(authApiConst.CHANGE_PASSWORD, data)
     }
-
-    getIp() {
-        return axios.get("https://api.ipify.org")
-    }
 }
 
 export default new authApi()

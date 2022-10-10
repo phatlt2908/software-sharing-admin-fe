@@ -20,16 +20,23 @@
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link"> More </a>
+            <a class="navbar-link">
+              <font-awesome-icon icon="cog" size="sm" />
+            </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item"> About </a>
-              <a class="navbar-item"> Jobs </a>
-              <a class="navbar-item"> Contact </a>
+              <router-link :to="{ name: 'userInfo' }" class="navbar-item">
+                Thông tin tài khoản
+              </router-link>
+              <router-link :to="{ name: 'changePassword' }" class="navbar-item">
+                Đổi mật khẩu
+              </router-link>
               <hr class="navbar-divider" />
-              <a class="navbar-item"> Report an issue </a>
+              <router-link :to="{ name: 'register' }" class="navbar-item">
+                Tạo account
+              </router-link>
             </div>
           </div>
-          <a class="navbar-item">
+          <a class="navbar-item" @click="logout">
             <span class="icon">
               <font-awesome-icon icon="sign-in-alt" size="sm" />
             </span>
@@ -65,10 +72,12 @@ export default {
         title: "Đã đăng xuất",
         toast: true,
         timer: 3000,
-        position: "bottom-start",
+        position: "bottom-end",
         showConfirmButton: false,
         type: "success",
       });
+
+      this.$router.push({ name: "login" });
     },
   },
 };
