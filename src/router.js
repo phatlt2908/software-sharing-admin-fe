@@ -137,7 +137,7 @@ router.beforeEach((to, from, next) => {
   }
 
   document.title = to.meta.title
-    ? to.meta.title + " | Đây nè"
+    ? to.meta.title + " | Đây nè Admin"
     : "Đây nè | Admin";
   next();
 });
