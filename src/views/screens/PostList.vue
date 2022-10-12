@@ -25,6 +25,7 @@
             <th>Ngày chỉnh sửa</th>
             <th>Lượt xem</th>
             <th>Lượt tải</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +48,9 @@
             </td>
             <td>{{ post.readNum }}</td>
             <td>{{ post.downloadNum }}</td>
+            <td>
+              <a @click="deletePost()"><font-awesome-icon icon="trash" /></a>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -110,11 +114,33 @@ export default {
     formatDate(date) {
       return new Date(date).toISOString().split("T")[0];
     },
+    deletePost() {
+      this.$swal({
+        icon: "warning",
+        title: "Chắc chắn xóa bài viết?",
+        showDenyButton: true,
+        denyButtonText: "Xóa",
+        showCancelButton: true,
+        cancelButtonText: "Quay xe",
+        showConfirmButton: false,
+        type: "warning",
+      }).then((result) => {
+        if (result.isDenied) {
+          this.$swal({
+            icon: "error",
+            title: "Tính năng đang phát triển, Vui lòng thử lại sau!",
+            timer: 3000,
+            showConfirmButton: true,
+            type: "error",
+          });
+        }
+      });
+    },
   },
   watch: {
     categorySelected() {
       this.getPostList();
-    }
-  }
+    },
+  },
 };
 </script>

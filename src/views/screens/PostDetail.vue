@@ -125,6 +125,31 @@
         <button @click.prevent="savePost" class="button is-link">Lưu</button>
       </div>
     </div>
+    <div class="mt-5">
+      <article class="message is-primary">
+        <div class="message-body">
+          <h5 class="title is-5">Hướng dẫn upload và đính kèm link file</h5>
+          <ol>
+            <li>Tìm kiếm file cài đặt trên mạng</li>
+            <li>Tải về, xóa các file không cần thiết</li>
+            <li>
+              Đổi tên, và nén file zip với mật khẩu là "dayne.run". Đổi tên file
+              vừa nén theo dạng "[dayne.run] - {tên file}"
+            </li>
+            <li>
+              Upload file vừa nén vào
+              <a
+                href="https://drive.google.com/drive/folders/1dCqSENKOEIjB7HE2EDhgAHc9_FRSK7Ke?usp=sharing"
+                target="_blank"
+              >
+                link này
+              </a>
+            </li>
+            <li>Share link và copy link dán vào text box bên trên</li>
+          </ol>
+        </div>
+      </article>
+    </div>
   </div>
 </template>
 

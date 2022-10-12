@@ -36,7 +36,7 @@ export default {
 <style lang="scss" scoped>
 .side-bar {
   width: 15rem;
-  z-index: 10;
+  z-index: 40;
   background: #2e323a;
   height: 100vh;
   overflow-y: auto;

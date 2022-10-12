@@ -21,7 +21,7 @@
         <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
-              <font-awesome-icon icon="cog" size="sm" />
+              {{ $store.state.user.name }}
             </a>
             <div class="navbar-dropdown">
               <router-link :to="{ name: 'userInfo' }" class="navbar-item">
