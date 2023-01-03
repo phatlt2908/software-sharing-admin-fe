@@ -23,6 +23,10 @@ module.exports = {
         ]
     },
 
+    // Fix ckEditor error this.query.translateSource is not a function
+    // Base on: https://github.com/ckeditor/ckeditor5-vue/issues/136
+    parallel: false,
+
     // Vue CLI would normally use its own loader to load .svg and .css files, however:
     //	1. The icons used by CKEditor must be loaded using raw-loader,
     //	2. The CSS used by CKEditor must be transpiled using PostCSS to load properly.
