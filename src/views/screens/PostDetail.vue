@@ -5,7 +5,7 @@
       <label class="label">Danh mục</label>
       <div class="control">
         <div class="select">
-          <select v-model="categorySelected">
+          <select v-model="categorySelected" @change="isEditing = true">
             <option :value="null">--- Chọn danh mục ---</option>
             <option
               v-for="category in categoryList"
@@ -26,6 +26,7 @@
           type="text"
           placeholder="Code (vd: 2016 Professional Plus Full)"
           v-model="postCode"
+          @change="isEditing = true"
         />
       </div>
     </div>
@@ -37,6 +38,7 @@
           type="text"
           placeholder="Name (vd: 2016 Professional Plus Full)"
           v-model="postName"
+          @change="isEditing = true"
         />
       </div>
     </div>
@@ -48,6 +50,7 @@
           placeholder="Tiêu đề (vd: Download Visio 2016 Professional Plus Full - Hướng dẫn (Google Drive))"
           maxlength="500"
           v-model="title"
+          @change="isEditing = true"
         ></textarea>
       </div>
     </div>
@@ -58,6 +61,7 @@
           class="textarea"
           placeholder="Mô tả"
           v-model="description"
+          @change="isEditing = true"
         ></textarea>
       </div>
     </div>
@@ -68,6 +72,7 @@
           :editor="editor"
           v-model="editorData"
           :config="editorConfig"
+          @input="isEditing = true"
         ></ckeditor>
       </div>
     </div>
@@ -80,14 +85,14 @@
           :key="link"
         >
           <div class="select">
-            <select v-model="link.type">
+            <select v-model="link.type" @change="isEditing = true">
               <option :value="null">--- Chọn loại link ---</option>
               <option
-                v-for="type in linkDownloadTypeList"
-                :key="type.code"
-                :value="type.code"
+                v-for="linkType in linkDownloadTypeList"
+                :key="linkType.code"
+                :value="linkType.code"
               >
-                {{ type.name }}
+                {{ linkType.name }}
               </option>
             </select>
           </div>
@@ -96,12 +101,14 @@
             type="text"
             placeholder="url"
             v-model="link.url"
+            @change="isEditing = true"
           />
           <input
             class="input link-type-url"
             type="text"
             placeholder="name"
             v-model="link.name"
+            @change="isEditing = true"
           />
           <div
             v-if="linkDownloadList.length > 1"
@@ -239,6 +246,7 @@ export default {
           name: null,
         },
       ],
+      isEditing: false,
     };
   },
   created() {
@@ -329,9 +337,11 @@ export default {
         type: null,
         url: null,
       });
+      this.isEditing = true;
     },
     removeLinkDownload(index) {
       this.linkDownloadList.splice(index, 1);
+      this.isEditing = true;
     },
     savePost() {
       // toast({
@@ -370,6 +380,7 @@ export default {
             timer: 3000,
             type: "success",
           });
+          this.isEditing = false;
         })
         .catch((err) => {
           console.error("Load category pulldown failed ", err);
@@ -381,6 +392,18 @@ export default {
           });
         });
     },
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log("Post detail to: ", to);
+    console.log("Post detail from: ", from);
+    if (!this.isEditing) {
+      next();
+    } else {
+      const userWantToLeave = confirm(
+        "Dữ liệu nhập chưa được lưu sẽ bị mất! Bạn có chắc chắn thoát khỏi trang này?"
+      );
+      next(userWantToLeave);
+    }
   },
 };
 </script>
